@@ -51,7 +51,8 @@ typedef struct _parameters
 
 /**
  * struct specifier - Struct token
- * @specifier: format token
+ *
+ * @specifiers: format token
  * @f: The function associated
  */
 typedef struct specifier
