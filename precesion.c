@@ -29,10 +29,8 @@ char *get_precision(char *s, prm_t *params, va_list ap)
 	 */
 	else
 	{
-		for (; _isdigit(*s); s++)
-		{
-			precision = precision * 10 + (*s - '0');
-		}
+		while (_isdigit(*s))
+			d = d * 10 + (*s++ - '0');
 	}
 	(*params).precisions = precision;
 	return (s);
