@@ -23,8 +23,8 @@ int _putchar(int z)
 
 /**
  * _puts - a function that prints a string with newline
- * @s: pointer to a characte 
- * Return: the length of the string s - a 
+ * @s: pointer to a characte
+ * Return: the length of the string s - a
  */
 int _puts(char *s)
 {
