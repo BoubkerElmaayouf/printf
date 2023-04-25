@@ -45,7 +45,7 @@ int print_rev(va_list ap, prm_t *params)
 /**
  * print_rot13 - Prints a string in ROT13 encoding.
  * @ap: string Argument
- * @prm_t: A struct that is not used in this function.
+ * @params: A struct that is not used in this function.
  * Return: The number of bytes printed.
  */
 int print_rot13(va_list ap, prm_t *params)
