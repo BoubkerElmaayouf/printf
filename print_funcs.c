@@ -47,9 +47,9 @@ int print_int(va_list ap, prm_t *params)
 {
 	long longer;
 
-	if (!(*params).modifier_l)
+	if ((*params).modifier_l)
 		longer = va_arg(ap, long);
-	else if (!(*params).modifier_h)
+	else if ((*params).modifier_h)
 		longer = (short int)va_arg(ap, int);
 	else
 		longer = (int)va_arg(ap, int);
