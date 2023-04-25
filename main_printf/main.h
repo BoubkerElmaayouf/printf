@@ -77,7 +77,7 @@ int print_S(va_list ap, prm_t *params);
 
 /*** number functions  | located in print_numb.c file ***/
 char *convert(long int num, int base, int flags, prm_t *params);
-int print_unsigned(va_list ap, prm_t *params); /*task 3*/
+int print_unsigned(va_list ap, prm_t *params);
 int print_address(va_list ap, prm_t *params);
 
 /*** convert_number.c | located in the convert_numbers.c file ***/
