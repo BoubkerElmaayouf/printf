@@ -10,7 +10,7 @@
 #define BUF_OUTPUT_SIZE 1024 /*task 4*/
 #define BUFFER_FLUSH -1
 
-#define FIELD_ BUF_SIZE 50
+#define FIELD_BUF_SIZE 50
 
 #define NULL_STRING "(null)"
 
@@ -51,7 +51,6 @@ typedef struct _parameters
 
 /**
  * struct specifier - Struct token
- *
  * @specifier: format token
  * @f: The function associated
  */
@@ -77,7 +76,7 @@ int print_S(va_list ap, prm_t *params);
 
 /*** number functions  | located in print_numb.c file ***/
 char *convert(long int num, int base, int flags, prm_t *params);
-int print_unsigned(va_list ap, prm_t *params); /*task 3*/
+int print_unsigned(va_list ap, prm_t *params);
 int print_address(va_list ap, prm_t *params);
 
 /*** convert_number.c | located in the convert_numbers.c file ***/
@@ -88,7 +87,7 @@ int print_octal(va_list ap, prm_t *params);
 
 /*** simple printers functions | located in  ***/
 int print_from_to(char *start, char *stop, char *except);
-int print_rev(va_list ap, prm_t *params); /* task 13 */
+int print_rev(va_list ap, prm_t *params);
 int print_rot13(va_list ap, prm_t *params);
 
 /*** print numbers functions | located in the print_numbers.c file ***/
