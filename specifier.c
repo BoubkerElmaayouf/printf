@@ -25,16 +25,16 @@ int (*get_specifier(char *s))(va_list ap, prm_t *params)
 		{"R", print_rot13},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	for (i = 0; specifiers[i].specifiers != NULL; i++)
+	while (specifiers[i].specifiers)
 	{
 		if (*s == specifiers[i].specifiers[0])
 		{
 			return (specifiers[i].f);
 		}
+		i++;
 	}
-
 	return (NULL);
 }
 
@@ -130,10 +130,8 @@ char *get_width(char *s, prm_t *params, va_list ap)
 	}
 	else
 	{
-		for (; _isdigit(*s); s++)
-		{
-			width_value = width_value * 10 + (*s - '0');
-		}
+		while (_isdigit(*s))
+			width_value = width_value * 10 + (*s++ - '0');
 	}
 	(*params).widths = width_value;
 	return (s);
