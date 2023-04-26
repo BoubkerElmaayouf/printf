@@ -11,11 +11,12 @@ int print_from_to(char *start, char *stop, char *except)
 {
 	int S = 0;
 
-	for (; start <= stop; start++)
+	while (start <= stop)
 	{
 		if (start != except)
 			S += _putchar(*start);
-		}
+		start++;
+	}
 		return (S);
 }
 
@@ -31,7 +32,7 @@ int print_rev(va_list ap, prm_t *params)
 	char *string = va_arg(ap, char *);
 	(void)params;
 
-	if (string != NULL)
+	if (string)
 	{
 		for (length = 0; *string; string++)
 			length++;
@@ -51,7 +52,7 @@ int print_rev(va_list ap, prm_t *params)
 int print_rot13(va_list ap, prm_t *params)
 {
 	int counter = 0;
-	int x = 0, index = 0;
+	int x, index = 0;
 	char alphabet[] =
 		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
 	char *input_str = va_arg(ap, char *);
