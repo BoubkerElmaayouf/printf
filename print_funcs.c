@@ -80,7 +80,7 @@ int print_string(va_list ap, prm_t *params)
 	if ((*params).minus_f)
 	{
 		if ((*params).precisions != UINT_MAX)
-			for (; x < padding; x++)
+			for (x = 0; x < padding; x++)
 				num_chars += _putchar(*string++);
 		else
 			num_chars += _puts(string);
@@ -90,7 +90,7 @@ int print_string(va_list ap, prm_t *params)
 	if (!(*params).minus_f)
 	{
 		if ((*params).precisions != UINT_MAX)
-			for (; x < padding; x++)
+			for (x = 0; x < padding; x++)
 				num_chars += _putchar(*string++);
 		else
 			num_chars += _puts(string);
