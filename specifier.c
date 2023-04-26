@@ -25,15 +25,15 @@ int (*get_specifier(char *s))(va_list ap, prm_t *params)
 		{"R", print_rot13},
 		{NULL, NULL}
 	};
-	int i = 0;
+	int x = 0;
 
-	while (specifiers[i].specifiers)
+	while (specifiers[x].specifiers)
 	{
-		if (*s == specifiers[i].specifiers[0])
+		if (*s == specifiers[x].specifiers[0])
 		{
-			return (specifiers[i].f);
+			return (specifiers[x].f);
 		}
-		i++;
+		x++;
 	}
 	return (NULL);
 }
