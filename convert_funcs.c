@@ -70,15 +70,15 @@ int print_HEXADECIMAL(va_list ap, prm_t *params)
 	unsigned long longer;
 	char *string;
 
-	if (params->modifier_l)
+	if ((*params).modifier_l)
 		longer = (unsigned long)va_arg(ap, unsigned long);
-	else if (params->modifier_h)
+	else if ((*params).modifier_h)
 		longer = (unsigned short int)va_arg(ap, unsigned int);
 	else
 		longer = (unsigned int)va_arg(ap, unsigned int);
 
 	string = convert(longer, 16, UNSIGNED_CONVERT, params);
-	if (params->hashtag_f && longer)
+	if ((*params).hashtag_f && longer)
 	{
 		*--string = 'X';
 		*--string = '0';
@@ -102,7 +102,7 @@ int print_binary(va_list ap, prm_t *params)
 	char *string = convert(Num, 2, UNSIGNED_CONVERT, params);
 	int C = 0;
 
-	if (params->hashtag_f && Num)
+	if ((*params).hashtag_f && Num)
 		*--string = '0';
 	(*params).unsign = 1;
 	C += print_number(string, params);

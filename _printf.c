@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	va_start(ArgPtr, format);
 
 	/* Checking if the format string is NULL or empty */
-	if (format == NULL || (format[0] == '%' && !format[1]))
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 		fmt_ptr = get_precision(fmt_ptr, &params, ArgPtr);
 		if (get_modifier(fmt_ptr, &params))
 			fmt_ptr++;
-		if (get_specifier(fmt_ptr) == NULL)
+		if (!get_specifier(fmt_ptr))
 			S += print_from_to(_start, fmt_ptr,
 					params.modifier_l || params.modifier_h ? fmt_ptr - 1 : 0);
 		else
