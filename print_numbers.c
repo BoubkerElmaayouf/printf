@@ -33,7 +33,7 @@ int _strlen(char *str)
 int print_number(char *str, prm_t *params)
 {
 	unsigned int num_digits = _strlen(str);
-	int is_negative = (*str == '-' && !(*params).unsign);
+	int is_negative = (!(*params).unsign &&*str == '-');
 
 	if (!(*params).precisions  && *str == '0' && !str[1])
 		str = "";
@@ -65,7 +65,7 @@ int print_number_left_shift(char *str, prm_t *params)
 	unsigned int Num = 0, is_negative, is_negative2, num_digits = _strlen(str);
 	char padding_char = ' ';
 
-	if (!(*params).minus_f  && (*params).zero_f)
+	if ((*params).zero_f && !(*params).minus_f)
 		padding_char = '0';
 	is_negative = is_negative2 = (!(*params).unsign && *str == '-');
 	if (is_negative && num_digits < (*params).widths && padding_char == '0' &&
